@@ -50,8 +50,9 @@ angular.module('GingerApp.controllers', []).
         $scope.status = null;
         $scope.merchant = null;
         
-        $scope.submit = function () {
-            gingerAPIservice.addPayment(
+        $scope.submit = function (createPaymentForm) {
+            if(createPaymentForm.$valid){
+                gingerAPIservice.addPayment(
                 {
                     "method": $scope.method,
                     "amount": $scope.amount,
@@ -60,11 +61,12 @@ angular.module('GingerApp.controllers', []).
                     "status" : $scope.status,
                     "merchant" : $scope.merchant
                 }
-            ).then(function () {
-                $location.path("/payments");
-            }, function (err) {
-                (err);
-            });
+                ).then(function () {
+                    $location.path("/payments");
+                }, function (err) {
+                    (err);
+                });
+            }
         }
     })
     

@@ -3,7 +3,7 @@
         <h2 >Add New Payment</h2>
     </div>
 
-    <form class="form" name="createPaymentForm" ng-submit="submit()" novalidate>
+    <form class="form" name="createPaymentForm" ng-submit="submit(createPaymentForm)" validate>
         <div class="form-group">
             <label class="p-label">Method:</label>
             <select class="form-control" name="singleSelect" ng-model="method" required>
@@ -15,7 +15,7 @@
         
         <div class="form-group">
             <label class="p-label">Amount:</label>
-            <input class="form-control" type="text" ng-model="amount" placeholder="100.00" required ng-pattern="/^[0-9]+([,.][0-9]+)?$/"/>
+            <input class="form-control" type="text" ng-model="amount" placeholder="100.00" required ng-pattern="/^[0-9]+([.][0-9]+)?$/"/>
         </div>
 
         <div class="form-group">
@@ -37,6 +37,5 @@
         </div>
 
         <button type="submit" class="btn-success">Accept</button>
-        <button type="button" class="btn-danger" ng-click="cancel()">Cancel</button>
     </form>
 </div>
