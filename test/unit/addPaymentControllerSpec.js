@@ -31,7 +31,7 @@ describe('Controller: addPaymentController', function () {
   }));
 
   it('should submit to add payment', function () {
-    $scope.submit();
+    $scope.submit({$valid : true});
     $rootScope.$apply();
 
     expect(gingerAPIservice.addPayment).toHaveBeenCalled();
