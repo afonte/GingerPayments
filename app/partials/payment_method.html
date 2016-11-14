@@ -17,9 +17,9 @@
   <tbody>
     <tr ng-repeat="payment in payments | filter: searchFilter">
         <td>{{payment.method}}</td>
-        <td>{{payment.amount}}</td>
+        <td>{{payment.amount / 100 | currency}}</td>
         <td>{{payment.currency}}</td>
-        <td>{{payment.created}}</td>
+        <td>{{payment.created | date:'medium'}}</td>
         <td>{{payment.status}}</td>
         <td>{{payment.merchant}}</td>
     </tr>

@@ -5,7 +5,10 @@ angular.module('GingerApp.services', [])
 
     gingerAPI.getPayments = function() {
       return $http.get('http://localhost:3000/payments').then(function (response) {
-          return response.data;
+         return response.data.map(p => {
+           p.created = new Date(p.created);
+           return p; 
+         });
       });
     }
 
