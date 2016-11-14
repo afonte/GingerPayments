@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>Created</th>
+            <th>Status</th>
+            <th>Merchant</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="payment in payments">
+            <td>{{payment.method}}</td>
+            <td>{{payment.amount}}</td>
+            <td>{{payment.currency}}</td>
+            <td>{{payment.created}}</td>
+            <td>{{payment.status}}</td>
+            <td>{{payment.merchant}}</td>
+        </tr>
+    </tbody>
+</table>

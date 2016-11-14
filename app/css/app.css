@@ -1,0 +1,22 @@
+body{
+    font-family: Open Sans;
+}
+h1 {
+    text-align: center;
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 100%;
+}
+button {
+    margin: 5px;
+    padding: 5px;
+}
+main {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+}
