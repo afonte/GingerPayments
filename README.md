@@ -24,14 +24,8 @@
 
 7- Run e2e tests
 
-   a) npm install -g protractor
-
-   b) webdriver-manager update
-
-   c) webdriver-manager start
-
-   d) npm start (just be sure your app is running)
-
-   e) protractor test/protractor-conf.js
-
-
+    npm install -g protractor
+    webdriver-manager update
+    webdriver-manager start
+    npm start (just be sure your app is running)
+    protractor test/protractor-conf.js
