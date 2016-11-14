@@ -16,10 +16,10 @@
     </header>
     <main ng-controller="paymentsController">
         <aside>
-            <button class="btn-primary" ng-click="showTop20Amount()">Callback</button>
-            <button class="btn-primary" ng-click="showMerchantGringer()">Promise</button>
-            <button class="btn-primary" ng-click="goToFilterPaymentMethodPage()">Filter Payment-Method</button>
-            <button class="btn-primary" ng-click="addPayment()">Add payment</button>
+            <button class="btn-primary callback" ng-click="showTop20Amount()">Callback</button>
+            <button class="btn-primary promise" ng-click="showMerchantGringer()">Promise</button>
+            <button class="btn-primary filter-method" ng-click="goToFilterPaymentMethodPage()">Filter Payment-Method</button>
+            <button class="btn-primary payment-form" ng-click="addPayment()">Add payment</button>
         </aside>
         <section>
           <ng-view></ng-view>
