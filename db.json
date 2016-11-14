@@ -4544,6 +4544,15 @@
       "status": "denied",
       "merchant": "sas",
       "id": 505
+    },
+    {
+      "method": "creditcard",
+      "amount": 12,
+      "currency": "ert",
+      "created": "2016-11-14T03:05:51.046Z",
+      "status": "denied",
+      "merchant": "dsd",
+      "id": 506
     }
   ]
 }

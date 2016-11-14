@@ -1,27 +1,30 @@
-<select name="singleSelect" ng-model="payment_method">
+<div class="p-method">
+    <select class="styled-select rounded" ng-model="payment_method">
       <option value="creditcard">creditcard</option>
       <option value="bank-transfer">bank-transfer</option>
       <option value="ideal">ideal</option>
-</select>
-<table class="table">
-  <thead>
-      <tr>
-          <th>Method</th>
-          <th>Amount</th>
-          <th>Currency</th>
-          <th>Created</th>
-          <th>Status</th>
-          <th>Merchant</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="payment in payments | filter: searchFilter">
-        <td>{{payment.method}}</td>
-        <td>{{payment.amount / 100 | currency}}</td>
-        <td>{{payment.currency}}</td>
-        <td>{{payment.created | date:'medium'}}</td>
-        <td>{{payment.status}}</td>
-        <td>{{payment.merchant}}</td>
-    </tr>
-  </tbody>
-</table>
+    </select>
+    
+    <table class="p-table">
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>Created</th>
+            <th>Status</th>
+            <th>Merchant</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="payment in payments | filter: searchFilter">
+            <td>{{payment.method}}</td>
+            <td>{{payment.amount / 100 | currency}}</td>
+            <td>{{payment.currency}}</td>
+            <td>{{payment.created | date:'medium'}}</td>
+            <td>{{payment.status}}</td>
+            <td>{{payment.merchant}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
