@@ -1,6 +1,16 @@
 angular.module('GingerApp.controllers', []).
     controller('paymentsController', function($scope, $location, $filter, gingerAPIservice) {
-        
+
+        $scope.getPayments = function(){
+            gingerAPIservice.getPayments().then(function (response) {
+                $scope.payments = response;
+            }, function (err) {
+                (err);
+            });
+        }
+
+        $scope.getPayments();
+
         $scope.showTop20Amount = function(){
             gingerAPIservice.getPayments().then(function (response) {
                 $scope.payments = response;
@@ -55,7 +65,7 @@ angular.module('GingerApp.controllers', []).
                 gingerAPIservice.addPayment(
                 {
                     "method": $scope.method,
-                    "amount": $scope.amount,
+                    "amount": $scope.amount  * 100,
                     "currency":  $scope.currency,
                     "created" : new Date(),
                     "status" : $scope.status,
