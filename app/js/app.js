@@ -1,6 +1,7 @@
 angular.module('GingerApp', [
   'GingerApp.services',
-  'GingerApp.controllers',
+  'GingerApp.payments',
+  'GingerApp.addPayment',
   'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {

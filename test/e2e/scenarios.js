@@ -15,7 +15,7 @@ describe('Gingerapp', function() {
   describe('top20Payments', function() {
     it('should render payments when user clicks to callback btn', function() {
       element(by.css('.callback')).click();
-      expect(element(by.xpath('.//*[.="creditcard"]')).isDisplayed()).toBe(true);
+      expect(element(by.xpath('.//*[.="$99.96"]')).isDisplayed()).toBe(true);
     });
   });
 
@@ -43,11 +43,11 @@ describe('Gingerapp', function() {
 
     it('should redirect to /payments when user fills Add payment form', function() {
       element(by.css('.payment-form')).click();
-      element(by.model('method')).sendKeys('ideal');
-      element(by.model('amount')).sendKeys('12.10');
-      element(by.model('currency')).sendKeys('USD');
-      element(by.model('status')).sendKeys('accepted');
-      element(by.model('merchant')).sendKeys('Ginger');
+      element(by.model('payment.method')).sendKeys('ideal');
+      element(by.model('payment.amount')).sendKeys('12.10');
+      element(by.model('payment.currency')).sendKeys('USD');
+      element(by.model('payment.status')).sendKeys('accepted');
+      element(by.model('payment.merchant')).sendKeys('Ginger');
       element(by.tagName('button')).click();
 
       expect(browser.getLocationAbsUrl()).toMatch("/payments");

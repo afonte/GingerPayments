@@ -1,4 +1,4 @@
-angular.module('GingerApp.controllers', []).
+angular.module('GingerApp.payments', []).
     controller('paymentsController', function($scope, $location, $filter, gingerAPIservice) {
 
         $scope.getPayments = function(){
@@ -52,31 +52,6 @@ angular.module('GingerApp.controllers', []).
         $scope.addPayment = function () {
             $location.path("/add_payment");
         }
-    }).
-   controller('addPaymentController', function($scope, $location, gingerAPIservice) {
-        $scope.method = null;
-        $scope.amount = null;
-        $scope.currency = null;
-        $scope.status = null;
-        $scope.merchant = null;
-        
-        $scope.submit = function (createPaymentForm) {
-            if(createPaymentForm.$valid){
-                gingerAPIservice.addPayment(
-                {
-                    "method": $scope.method,
-                    "amount": $scope.amount  * 100,
-                    "currency":  $scope.currency,
-                    "created" : new Date(),
-                    "status" : $scope.status,
-                    "merchant" : $scope.merchant
-                }
-                ).then(function () {
-                    $location.path("/payments");
-                }, function (err) {
-                    (err);
-                });
-            }
-        }
     })
+   
     

@@ -4553,6 +4553,24 @@
       "status": "denied",
       "merchant": "dsd",
       "id": 506
+    },
+    {
+      "method": "bank-transfer",
+      "amount": 1200,
+      "currency": "qwe",
+      "created": "2016-11-20T12:54:03.031Z",
+      "status": "accepted",
+      "merchant": "wee",
+      "id": 507
+    },
+    {
+      "method": "creditcard",
+      "amount": 10000,
+      "currency": "usd",
+      "created": "2016-11-20T12:59:49.633Z",
+      "status": "accepted",
+      "merchant": "tyu",
+      "id": 508
     }
   ]
 }
