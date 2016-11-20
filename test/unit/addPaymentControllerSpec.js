@@ -31,10 +31,24 @@ describe('Controller: addPaymentController', function () {
   }));
 
   it('should submit to add payment', function () {
+    $scope.payment = {
+      "method": "creditcard",
+      "amount": 15,
+      "currency":  "USD",
+      "status" : "acc",
+      "merchant" : "ginger"
+    }
+
     $scope.submit({$valid : true});
     $rootScope.$apply();
 
-    expect(gingerAPIservice.addPayment).toHaveBeenCalled();
+    expect(gingerAPIservice.addPayment).toHaveBeenCalledWith(jasmine.objectContaining({
+      "method": "creditcard",
+      "amount": 1500,
+      "currency":  "USD",
+      "status" : "acc",
+      "merchant" : "ginger"
+    }));
     expect($location.path).toHaveBeenCalledWith('/payments');
   });
 });
